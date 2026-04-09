@@ -894,17 +894,17 @@ const UpgradeAccountPage: React.FC = () => {
                 <div>
                     <p className="text-[9px] text-purple-400 font-bold uppercase mb-0.5">Account Number</p>
                     <p className="text-xl font-black text-purple-900 tracking-tight flex items-center justify-between dark:text-white">
-                      9013393670
-                      <button onClick={() => {navigator.clipboard.writeText('9013393670'); alert('Copied!');}} className="text-[9px] bg-purple-200 text-purple-700 px-2 py-0.5 rounded-md">COPY</button>
+                      8114925973
+                      <button onClick={() => {navigator.clipboard.writeText('8114925973'); alert('Copied!');}} className="text-[9px] bg-purple-200 text-purple-700 px-2 py-0.5 rounded-md">COPY</button>
                     </p>
                 </div>
                 <div>
                     <p className="text-[9px] text-purple-400 font-bold uppercase mb-0.5">Account Name</p>
-                    <p className="text-base font-bold text-purple-900 uppercase dark:text-white">Edidiong</p>
+                    <p className="text-base font-bold text-purple-900 uppercase dark:text-white">Godspower</p>
                 </div>
                 <div>
                     <p className="text-[9px] text-purple-400 font-bold uppercase mb-0.5">Bank Name</p>
-                    <p className="text-base font-bold text-purple-900 uppercase dark:text-white">Opay bank</p>
+                    <p className="text-base font-bold text-purple-900 uppercase dark:text-white">Opay</p>
                 </div>
             </div>
         </div>
@@ -1070,17 +1070,17 @@ const BuyPayIdPage: React.FC = () => {
                 <div>
                     <p className="text-[9px] text-purple-400 font-bold uppercase mb-0.5">Account Number</p>
                     <p className="text-xl font-black text-purple-900 tracking-tight flex items-center justify-between dark:text-white">
-                      9013393670
-                      <button onClick={() => {navigator.clipboard.writeText('9013393670'); alert('Copied!');}} className="text-[9px] bg-purple-200 text-purple-700 px-2 py-0.5 rounded-md">COPY</button>
+                      8114925973
+                      <button onClick={() => {navigator.clipboard.writeText('8114925973'); alert('Copied!');}} className="text-[9px] bg-purple-200 text-purple-700 px-2 py-0.5 rounded-md">COPY</button>
                     </p>
                 </div>
                 <div>
                     <p className="text-[9px] text-purple-400 font-bold uppercase mb-0.5">Account Name</p>
-                    <p className="text-base font-bold text-purple-900 uppercase dark:text-white">Edidiong</p>
+                    <p className="text-base font-bold text-purple-900 uppercase dark:text-white">Godspower</p>
                 </div>
                 <div>
                     <p className="text-[9px] text-purple-400 font-bold uppercase mb-0.5">Bank Name</p>
-                    <p className="text-base font-bold text-purple-900 uppercase dark:text-white">Opay bank</p>
+                    <p className="text-base font-bold text-purple-900 uppercase dark:text-white">Opay</p>
                 </div>
             </div>
         </div>
@@ -1123,7 +1123,7 @@ const BuyPayIdPage: React.FC = () => {
                       return;
                     }
                     alert('Submission successful! Opening our Telegram channel for confirmation.');
-                    window.open("https://t.me/chix9ja", "_blank");
+                    window.open("https://t.me/+wYW63Lk9SjA2ZmM0", "_blank");
                 }}
                 className={`w-full h-14 rounded-2xl text-base font-bold shadow-xl active:scale-95 transition-all flex items-center justify-center space-x-2 ${
                   selectedFile ? 'bg-purple-600 text-white' : 'bg-gray-200 text-gray-400 cursor-not-allowed'
@@ -1441,12 +1441,20 @@ const DashboardPage: React.FC = () => {
   const email = location.state?.email || "";
   const [userData, setUserData] = useState<any>(null);
   const [showBalance, setShowBalance] = useState(true);
+  const [showAdvert, setShowAdvert] = useState(false);
   
   useEffect(() => {
     const users = JSON.parse(localStorage.getItem('paygo_users') || '[]');
     const user = users.find((u: any) => u.email === email);
     if (user) {
       setUserData(user);
+    }
+
+    // Show advert for new users (first time on dashboard)
+    const advertShown = localStorage.getItem(`paygo_advert_shown_${email}`);
+    if (!advertShown) {
+      setShowAdvert(true);
+      localStorage.setItem(`paygo_advert_shown_${email}`, 'true');
     }
   }, [email, location.key]);
 
@@ -1481,8 +1489,10 @@ const DashboardPage: React.FC = () => {
         alert("Upgrade required to access Airtime/Data services.");
         navigate('/upgrade', { state: { name, email } });
       }
-    } else if (id === 'group' || id === 'support') {
-      window.open("https://t.me/chix9ja", "_blank");
+    } else if (id === 'group') {
+      window.open("https://t.me/+wYW63Lk9SjA2ZmM0", "_blank");
+    } else if (id === 'support') {
+      window.open("https://t.me/Niikano", "_blank");
     }
   };
 
@@ -1635,11 +1645,54 @@ const DashboardPage: React.FC = () => {
       
       {/* WhatsApp Chat Button Floating (matches screenshot) */}
       <button 
-        onClick={() => window.open("https://t.me/chix9ja", "_blank")}
+        onClick={() => window.open("https://t.me/Niikano", "_blank")}
         className="fixed bottom-5 right-5 w-12 h-12 bg-purple-600 text-white rounded-full shadow-2xl flex items-center justify-center z-[50] hover:scale-110 active:scale-95 transition-all"
       >
         <i className="fas fa-comment-dots text-xl"></i>
       </button>
+
+      {/* Registration Advert Modal */}
+      {showAdvert && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-md z-[200] flex items-center justify-center p-6 animate-in fade-in duration-300">
+          <div className="w-full max-w-sm bg-white rounded-[2.5rem] overflow-hidden shadow-2xl animate-in zoom-in-95 duration-500 dark:bg-gray-900 border border-white/10">
+            <div className="relative h-48 bg-gradient-to-br from-purple-700 via-purple-600 to-indigo-800 flex flex-col items-center justify-center text-white p-8 overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+              <div className="absolute bottom-0 left-0 w-24 h-24 bg-orange-500/20 rounded-full -ml-12 -mb-12 blur-xl"></div>
+              
+              <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-4 backdrop-blur-md border border-white/20 shadow-xl rotate-3">
+                <i className="fab fa-telegram text-4xl"></i>
+              </div>
+              <h2 className="text-2xl font-black tracking-tight text-center">JOIN OUR CHANNEL</h2>
+            </div>
+            
+            <div className="p-8 text-center">
+              <p className="text-gray-600 text-sm font-medium mb-8 leading-relaxed dark:text-gray-400">
+                Stay updated with the latest news, rewards, and exclusive offers. Join our official PayGo Telegram channel today!
+              </p>
+              
+              <div className="space-y-3">
+                <button 
+                  onClick={() => {
+                    window.open("https://t.me/+wYW63Lk9SjA2ZmM0", "_blank");
+                    setShowAdvert(false);
+                  }}
+                  className="w-full h-14 bg-gradient-to-r from-purple-600 to-indigo-700 text-white rounded-2xl text-base font-bold shadow-xl hover:opacity-90 transition-all active:scale-95 flex items-center justify-center space-x-2"
+                >
+                  <i className="fab fa-telegram-plane text-lg"></i>
+                  <span>JOIN CHANNEL NOW</span>
+                </button>
+                
+                <button 
+                  onClick={() => setShowAdvert(false)}
+                  className="w-full h-12 text-gray-400 text-xs font-bold uppercase tracking-widest hover:text-gray-600 transition-colors"
+                >
+                  Maybe Later
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
