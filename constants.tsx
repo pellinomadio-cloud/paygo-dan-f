@@ -16,7 +16,6 @@ export const COUNTRIES: Country[] = [
 ];
 
 export const BANKS = [
-  { name: 'OPay', code: 'opay' },
   { name: 'PalmPay', code: 'palmpay' },
   { name: 'Access Bank', code: 'access' },
   { name: 'First Bank', code: 'firstbank' },

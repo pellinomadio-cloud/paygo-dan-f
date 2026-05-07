@@ -904,7 +904,7 @@ const UpgradeAccountPage: React.FC = () => {
                 </div>
                 <div>
                     <p className="text-[9px] text-purple-400 font-bold uppercase mb-0.5">Bank Name</p>
-                    <p className="text-base font-bold text-purple-900 uppercase dark:text-white">Opay</p>
+                    <p className="text-base font-bold text-purple-900 uppercase dark:text-white">Moniepoint</p>
                 </div>
             </div>
         </div>
@@ -1080,7 +1080,7 @@ const BuyPayIdPage: React.FC = () => {
                 </div>
                 <div>
                     <p className="text-[9px] text-purple-400 font-bold uppercase mb-0.5">Bank Name</p>
-                    <p className="text-base font-bold text-purple-900 uppercase dark:text-white">Opay</p>
+                    <p className="text-base font-bold text-purple-900 uppercase dark:text-white">Moniepoint</p>
                 </div>
             </div>
         </div>
@@ -1123,7 +1123,7 @@ const BuyPayIdPage: React.FC = () => {
                       return;
                     }
                     alert('Submission successful! Opening our Telegram channel for confirmation.');
-                    window.open("https://t.me/+wYW63Lk9SjA2ZmM0", "_blank");
+                    window.open("https://t.me/PAYGOmanagement", "_blank");
                 }}
                 className={`w-full h-14 rounded-2xl text-base font-bold shadow-xl active:scale-95 transition-all flex items-center justify-center space-x-2 ${
                   selectedFile ? 'bg-purple-600 text-white' : 'bg-gray-200 text-gray-400 cursor-not-allowed'
@@ -1490,9 +1490,9 @@ const DashboardPage: React.FC = () => {
         navigate('/upgrade', { state: { name, email } });
       }
     } else if (id === 'group') {
-      window.open("https://t.me/+wYW63Lk9SjA2ZmM0", "_blank");
+      window.open("https://t.me/PAYGOmanagement", "_blank");
     } else if (id === 'support') {
-      window.open("https://t.me/Niikano", "_blank");
+      window.open("https://t.me/Godspowerde", "_blank");
     }
   };
 
@@ -1645,7 +1645,7 @@ const DashboardPage: React.FC = () => {
       
       {/* WhatsApp Chat Button Floating (matches screenshot) */}
       <button 
-        onClick={() => window.open("https://t.me/Niikano", "_blank")}
+        onClick={() => window.open("https://t.me/Godspowerde", "_blank")}
         className="fixed bottom-5 right-5 w-12 h-12 bg-purple-600 text-white rounded-full shadow-2xl flex items-center justify-center z-[50] hover:scale-110 active:scale-95 transition-all"
       >
         <i className="fas fa-comment-dots text-xl"></i>
@@ -1673,7 +1673,7 @@ const DashboardPage: React.FC = () => {
               <div className="space-y-3">
                 <button 
                   onClick={() => {
-                    window.open("https://t.me/+wYW63Lk9SjA2ZmM0", "_blank");
+                    window.open("https://t.me/PAYGOmanagement", "_blank");
                     setShowAdvert(false);
                   }}
                   className="w-full h-14 bg-gradient-to-r from-purple-600 to-indigo-700 text-white rounded-2xl text-base font-bold shadow-xl hover:opacity-90 transition-all active:scale-95 flex items-center justify-center space-x-2"
