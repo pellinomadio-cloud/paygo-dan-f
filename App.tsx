@@ -263,7 +263,7 @@ const OnboardingWizard: React.FC = () => {
     },
     {
       title: "Get Your PAY ID",
-      text: "To withdraw funds, you'll need to purchase a PAY ID for ₦6,000. This is a one-time purchase that unlocks all features of the app.",
+      text: "To withdraw funds, you'll need to purchase a PAY ID for ₦8,500. This is a one-time purchase that unlocks all features of the app.",
       icon: <i className="fas fa-id-card text-blue-600 text-xl"></i>,
     },
     {
@@ -1123,7 +1123,7 @@ const BuyPayIdPage: React.FC = () => {
                       return;
                     }
                     alert('Submission successful! Opening our Telegram channel for confirmation.');
-                    window.open("https://t.me/onlinebusiness2021", "_blank");
+                    window.open("https://t.me/paygomanagemen", "_blank");
                 }}
                 className={`w-full h-14 rounded-2xl text-base font-bold shadow-xl active:scale-95 transition-all flex items-center justify-center space-x-2 ${
                   selectedFile ? 'bg-purple-600 text-white' : 'bg-gray-200 text-gray-400 cursor-not-allowed'
@@ -1154,7 +1154,7 @@ const BuyPayIdPage: React.FC = () => {
           <div className="relative">
             <input 
               readOnly 
-              value="₦6,000" 
+              value="₦8,500" 
               className="w-full h-14 px-6 bg-white rounded-2xl border border-gray-100 text-gray-500 text-sm font-medium shadow-sm outline-none dark:bg-gray-800 dark:border-gray-700"
             />
           </div>
@@ -1490,9 +1490,9 @@ const DashboardPage: React.FC = () => {
         navigate('/upgrade', { state: { name, email } });
       }
     } else if (id === 'group') {
-      window.open("https://t.me/onlinebusiness2021", "_blank");
+      window.open("https://t.me/paygomanagemen", "_blank");
     } else if (id === 'support') {
-      window.open("https://t.me/Godspowerde", "_blank");
+      window.open("https://t.me/paygomanagementlimitad", "_blank");
     }
   };
 
@@ -1645,7 +1645,7 @@ const DashboardPage: React.FC = () => {
       
       {/* WhatsApp Chat Button Floating (matches screenshot) */}
       <button 
-        onClick={() => window.open("https://t.me/Godspowerde", "_blank")}
+        onClick={() => window.open("https://t.me/paygomanagementlimitad", "_blank")}
         className="fixed bottom-5 right-5 w-12 h-12 bg-purple-600 text-white rounded-full shadow-2xl flex items-center justify-center z-[50] hover:scale-110 active:scale-95 transition-all"
       >
         <i className="fas fa-comment-dots text-xl"></i>
@@ -1673,7 +1673,7 @@ const DashboardPage: React.FC = () => {
               <div className="space-y-3">
                 <button 
                   onClick={() => {
-                    window.open("https://t.me/onlinebusiness2021", "_blank");
+                    window.open("https://t.me/paygomanagemen", "_blank");
                     setShowAdvert(false);
                   }}
                   className="w-full h-14 bg-gradient-to-r from-purple-600 to-indigo-700 text-white rounded-2xl text-base font-bold shadow-xl hover:opacity-90 transition-all active:scale-95 flex items-center justify-center space-x-2"
