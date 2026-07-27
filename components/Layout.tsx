@@ -21,9 +21,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const isAirtime = location.pathname === '/buy-airtime';
   const isData = location.pathname === '/buy-data';
   const isTransactions = location.pathname === '/transactions';
+  const isTask = location.pathname === '/task';
 
   // Pages that use the "app frame" style (mostly dashboard and its tools)
-  const isAppTool = isDashboard || isBuyPayId || isProfile || isTransfer || isUpgrade || isEarn || isAirtime || isData || isTransactions;
+  const isAppTool = isDashboard || isBuyPayId || isProfile || isTransfer || isUpgrade || isEarn || isAirtime || isData || isTransactions || isTask;
 
   return (
     <div className="min-h-screen bg-transparent flex flex-col items-center justify-start py-8 px-4 relative transition-colors duration-300">
